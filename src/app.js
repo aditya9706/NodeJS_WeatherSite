@@ -57,7 +57,10 @@ app.get('/weather', (req, res) => {
                 })
             }
             res.send({
-                temperature : data
+                temperature : data.temp,
+                description : data.description,
+                wind_dir : data.wind_dir,
+                wind_spd : data.wind_speed
             })
             
         }) 
