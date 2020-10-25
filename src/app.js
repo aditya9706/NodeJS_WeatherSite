@@ -3,7 +3,10 @@ const express = require('express')
 const hbs = require('hbs')
 const forecast = require('./utils/weather_api.js')
 const geocode = require('./utils/geocode.js')
+
 const app = express()
+const port = process.env.PORT || 3000
+
 const public_dir = path.join(__dirname, '../public')
 const views_dir = path.join(__dirname, '../template/views')
 const partial_dir = path.join(__dirname, '../template/partials')
@@ -90,6 +93,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000')
+app.listen(port, () => {
+    console.log('server is up on port ' + port)
 }) 

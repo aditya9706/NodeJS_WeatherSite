@@ -1,4 +1,4 @@
-console.log('client side javascript file running')
+console.log('client side javascript file')
 
 const weather_form = document.querySelector('form')
 const search = document.querySelector('input')
@@ -14,7 +14,7 @@ weather_form.addEventListener('submit', (e) => {
    
     msgOne.textContent = 'Loading ...'
     msgTwo.textContent = ''
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
         if(data.error){
             msgOne.textContent = data.error
